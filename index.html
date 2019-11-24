@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="index.html">Home</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+
+
+
+            <div class="right-side">
+                <div class="brand">
+                    <div>EMILY WANG</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content-wrapper">
+            <div class="portfolio-items-wrapper">
+
+                <div class="portfolio-item-wrapper">
+                     <div class="portfolio-img-background" style="background-image:url(images/featurephoto.pdf)"></div>
+
+                    <div class="img-text-wrapper">
+                        <div class="subtitle">
+                            I made a doggo.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item-wrapper">
+                    <div class="portfolio-img-background" style="background-image:url(images/playitforward.pdf)"></div>
+
+                    <div class="img-text-wrapper">
+                        <div class="subtitle">
+                            I made a jukebox.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item-wrapper">
+                    <div class="portfolio-img-background" style="background-image:url(images/WangEmily_Project6.pdf)"></div>
+
+                    <div class="img-text-wrapper">
+                        <div class="subtitle">
+                            I made an album cover.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item-wrapper">
+                    <div class="portfolio-img-background" style="background-image:url(images/WangEmily_ProjectFinal.pdf)"></div>
+
+                    <div class="img-text-wrapper">
+                        <div class="subtitle">
+                            I made some Es.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item-wrapper">
+                    <div class="portfolio-img-background" style="background-image:url(images/woofwoofuxui-01.png)"></div>
+
+                    <div class="img-text-wrapper">
+                        <div class="subtitle">
+                            I made a doggo app.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script>
+    const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper')
+
+    portfolioItems.forEach(portfolioItem => {
+        portfolioItem.addEventListener('mouseover', () => {
+            portfolioItem.childNodes[1].classList.add('img-darken');
+        })
+
+        portfolioItem.addEventListener('mouseout', () => {
+            portfolioItem.childNodes[1].classList.remove('img-darken');
+        })
+    })
+</script>
+
+
+</html>

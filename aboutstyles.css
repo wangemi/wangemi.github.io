@@ -1,0 +1,136 @@
+/* master styles*/
+body {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 11px;
+    margin: 0px;
+    background-color: #fff;
+    color: #333;
+}
+
+
+/* for navigation bar */
+.wrapper {
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 120px;
+    grid-template-rows: 180px 1fr;
+    grid-template-areas:
+        ". navlinks navlinks . . . . logo logo logo ."
+        ". . hello hello hello descr descr descr . . ."
+        "footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+.nav-links {
+    grid-area: navlinks;
+    font-size: 13px;
+    padding-top: 41px;
+    justify-self: start;
+    display: flex;
+}
+
+.nav-link-wrapper {
+    height: 22px;
+    margin-right: 20px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link-wrapper a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #878787;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-link-wrapper a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.nav-link-wrapper a {
+    position: relative;
+    color: #a3a3a3;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-link-wrapper a:hover {
+    color: black;
+}
+
+.active-nav-link {
+    color: black !important;
+}
+
+.active-nav-link a {
+    color: black !important;
+}
+
+.logo {
+    grid-area: logo;
+    padding-top: 30px;
+    justify-self: end;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 45px;
+    letter-spacing: 1px;
+    margin: 0px;
+    font-weight: 600;
+}
+
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 0px;
+}
+
+.hello {
+    grid-area: hello;
+    align-self: start;
+    justify-self: end;
+    padding-right: 45px;
+}
+
+.descr {
+    grid-area: descr;
+    font-size: 11px;
+    line-height: 17px;
+}
+
+a {
+    color: #a3a3a3;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+a:hover {
+    color: black;
+}
+
+.contact {
+    text-align: right;
+    font-size: 13px;
+    grid-area: hello;
+    font-size: 10px;
+    align-self: end;
+    justify-self: end;
+    padding-bottom: 13px;
+    padding-right: 45px;
+    line-height: 15px;
+}

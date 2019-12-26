@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>uMessage</title>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,600,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="projstyles.css">
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="nav-links">
+        <div class="nav-link-wrapper active-nav-link">
+            <a href="index.html">Work</a>
+        </div>
+
+        <div class="nav-link-wrapper">
+            <a href="design.html">Designs</a>
+        </div>
+
+        <div class="nav-link-wrapper">
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
+    <div class="logo">
+        <div>EMILY WANG</div>
+    </div>
+
+    <div class="descr">
+        <h1>uMessage</h1>
+        <b>LANGUAGE:</b> Java<br>
+        <b>CLASS PROJECT:</b> Data Structures & Parallelism<br>
+        <b>PARTNER PROJECT</b><br>
+        <b>DURATION:</b> 4.5 weeks<br>
+        <b>AUTUMN 2019</b><br>
+
+        <br>
+
+        uMessage is a chat application that suggests words, checks spelling, and autocompletes
+        for users as they are typing.<br>
+
+        <br><br>
+
+        <h2>The Focus</h2>
+        This project focused on the backend of uMessage, such as implementing dictionaries like
+        AVLTrees, chaining hash tables, move to front lists, and hash tries. In addition, we also implemented
+        common sorting algorithms like heap sort, quick sort, and top K sort.
+        <br><br>
+
+        <h2>The Process</h2>
+        <b>— PART 1</b><br>
+        Before writing the backend data structures, we wrote the client data structure
+        (NGramToNextChoicesMap) that would use said data structures later on. This way, we understood the expected
+        behavior. Then we implemented another dictionary, MoveToFrontList, a linked list that
+        inserts elements at the beginning of the list and moves any referenced elements to
+        the front as well.
+        <br><br>
+
+        <b>— PART 2</b><br>
+        We implemented more dictionaries like AVLTree and ChainingHashTable. These dictionaries
+        do not have the delete function. With our completed
+        ChainingHashTable, we replaced the dependency on Java's HashMaps in our HashTrieMap
+        with our own hash table implementation.
+        <br><br>
+
+        <b>— PART 3</b><br>
+        Now with all of our data structures completed, we wrote common sorting
+        algorithms like heap sort (with the min heap written in the <a href="proj4.html">Zip Utility</a>
+        project), quick sort, and top K sort.
+        <br><br>
+
+        <b>— PART 4</b><br>
+        In the final part of the uMessage project, we ran the provided uMessage client
+        code that uses all of the code we previously wrote. Words suggested depends on the
+        previous word typed, and is sorted based on frequency.
+        <br><br>
+        At the end of this project, my partner and I also ran several experiments to test
+        our data structure's performance. We compared AVLTrees versus binary search trees,
+        chain types (MoveToFrontList, AVLTree, and binary search tree) and hash functions
+        for the ChainingHashTable, and ran a general test to see which dictionary is the
+        "best."
+        <br><br>
+
+        <h2>Reflection</h2>
+        I really enjoyed implementing many of the commonly used data structures in Java.
+        Because I had to write them myself, I gained a much deeper understanding of
+        each data structure. It was really interesting to see the word suggestor in action,
+        since it looks so similar to the ones I'm used to on my phone. But now, I actually
+        know what's going on behind the scenes, which gives me a new found appreciation!
+    </div>
+
+    <div class="image"> <img src="https://github.com/wangemi/wangemi.github.io/blob/master/umessage.gif?raw=true"></div>
+
+    <div class="prev">
+        <a href="proj2.html"><</a>
+    </div>
+
+    <div class="next">
+        <a href="proj4.html">></a>
+    </div>
+</div>
+</body>
+</html>

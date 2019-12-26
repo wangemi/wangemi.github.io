@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jamboree Bot</title>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,600,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="projstyles.css">
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="nav-links">
+        <div class="nav-link-wrapper active-nav-link">
+            <a href="index.html">Work</a>
+        </div>
+
+        <div class="nav-link-wrapper">
+            <a href="design.html">Designs</a>
+        </div>
+
+        <div class="nav-link-wrapper">
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
+    <div class="logo">
+        <div>EMILY WANG</div>
+    </div>
+
+    <div class="descr">
+        <h1>Jamboree Bot</h1>
+        <b>LANGUAGE:</b> Java<br>
+        <b>CLASS PROJECT:</b> Data Structures & Parallelism<br>
+        <b>PARTNER PROJECT</b><br>
+        <b>DURATION:</b> 4.5 weeks<br>
+        <b>AUTUMN 2019</b><br>
+
+        <br>
+
+        Jamboree Bot is a chess bot that uses parallel Alpha-Beta pruning to calculate
+        best moves against an opponent.<br>
+
+        <br><br>
+
+        <h2>The Focus</h2>
+        This project focused on how to correctly implement parallel code using Java's Fork/Join
+        Framework. We explored how to convert different sequential programs into parallel ones,
+        and the impact of factors like cutoffs and number of processors on performance.
+        <br><br>
+
+        <h2>The Process</h2>
+        <b>— PART 1</b><br>
+        We first coded a simpler algorthim: minimax. After completing the sequential version,
+        we implemented the parallel version. This wasn't very difficult as minimax is
+        embarrassingly parallel. However, due to the nature of chess, we did not calculate
+        the best move by going all the way down to the leaves (unfortunately, we did not have
+        10^48 seconds to spare). Instead, we only look a few moves ahead (our ply). <br><br>
+        In addition to parallelizing the actual minimax algorithm, we also parallelized the
+        forking process instead of executing everything sequentially. This way, we can take
+        full advantage of parallelism. As a result, our parallel minimax reaches further down the game
+        tree than its sequential counterpart.
+        <br><br>
+
+        <b>— PART 2</b><br>
+        Similar to the first part, my partner and I began by implementing a sequential
+        AlphaBetaSearcher using Alpha-Beta pruning. As Alpha-Beta pruning is not embarrassingly
+        parallel, it took more a lot more thought to create our parallel JamboreeSearcher.
+        Instead of calculating alpha/beta values all the way down the game tree, we
+        calculated alpha/beta values at a percentage cutoff that each thread can then use.
+        This means that the alpha/beta values in JamboreeSearcher is less accurate. The rest
+        of JamboreeSearcher was implemented in a similar way to the parallel minimax.
+        <br><br>
+
+        <b>— PART 3</b><br>
+        A large portion of this project was dedicated to running experiments to test how
+        performance of the algorithms is affected by different variables like cutoffs and
+        number of processors available. Using Google Cloud Engine and fens (board states)
+        from the beginning, middle, and end of a game, we found that sequential cutoffs between
+        two to five performed the best for both minimax and Jamboree. The minimax algorithm had
+        the best performance using all 32 available processors, while Jamboree ranged between
+        18 to 28 processors.<br><br>
+        With the results from our experiments, we ran our optimized Jamboree bot against other provided
+        bots. Check out our bot in action in the GIF!
+        <br><br>
+
+        <h2>Reflection</h2>
+        Having only written sequential code prior to this project, I learned a lot about
+        implementing parallel code in this project. It was mindblowing to see the drastic
+        difference in performance between sequential and parallel code. I also had a lot
+        of fun learning about the different chess bot algorithms and watching our Jamboree
+        bot compete against other bots. It really shed a new light on my past chess games
+        against my computer.
+    </div>
+
+    <div class="image"> <img src="https://github.com/wangemi/wangemi.github.io/blob/master/chessdemo2.gif?raw=true" width="647" height="650"></div>
+
+    <div class="prev">
+        <a href="proj1.html"><</a>
+    </div>
+
+    <div class="next">
+        <a href="proj3.html">></a>
+    </div>
+</div>
+</body>
+</html>
